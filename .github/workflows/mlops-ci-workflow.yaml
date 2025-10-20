@@ -57,10 +57,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       
-      - name: Build and push
+      - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
+          context: .
+          file: ./Dockerfile
           push: true
-          tags: chensandiego/fastapi:${{ github.sha }}
-          context: "."
-          file: ./Dockerfile     
+          tags: |
+            chensandiego/fastapi:${{ github.sha }}
+            chensandiego/fastapi:latest
