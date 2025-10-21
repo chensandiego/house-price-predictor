@@ -59,7 +59,7 @@ jobs:
         with:
           install: true
       - name: Change to correct working directory
-        run: cd /home/runner/work/house-price-predictor/house-price-predictor && ls -l
+        run: cd /home/runner/work/house-price-predictor && ls -l
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
